@@ -1,45 +1,87 @@
 # 📁 Python File Organizer
 
-## 📌 Overview
-This project is a Python-based file organization script that automatically sorts files in a given directory into categorized folders based on their file extensions.
-
-It helps keep directories clean and organized by grouping files such as images, documents, videos, audio files, and more into separate folders.
+A simple Python script that organizes files in a specified directory into categorized folders based on file extensions.
+This project demonstrates basic file system operations using Python’s built-in modules.
 
 ---
 
-## 🛠 Features
-- Automatically detects file types using extensions
-- Organizes files into predefined categories:
-  - Images
-  - Videos
-  - Documents
-  - Audio
-  - Archives
-  - Data
-  - Others
-- Creates category folders if they do not already exist
-- Skips directories to avoid errors
-- Simple and easy-to-use command-line interface
+## Features
+
+* Organizes files into predefined categories:
+
+  * Images
+  * Videos
+  * Documents
+  * Audio
+  * Archives
+  * Data
+  * Others
+* Automatically creates folders if they do not exist
+* Case-insensitive file extension matching
+* Skips subdirectories
+* Moves unmatched files into an `Others` folder
+* Command-line based interaction
 
 ---
 
-## 🧰 Technologies Used
-- Python 3
-- `os` module (file system operations)
-- `shutil` module (file moving operations)
+## File Categories
+
+**Images**
+`.jpg`, `.jpeg`, `.png`, `.gif`, `.bmp`, `.tiff`
+
+**Videos**
+`.mp4`, `.mkv`, `.flv`, `.avi`, `.mov`
+
+**Documents**
+`.pdf`, `.docx`, `.doc`, `.txt`, `.ppt`, `.pptx`, `.xls`, `.xlsx`
+
+**Audio**
+`.mp3`, `.wav`, `.aac`, `.flac`
+
+**Archives**
+`.zip`, `.rar`, `.7z`, `.tar`, `.gz`
+
+**Data**
+`.csv`, `.json`, `.xml`
+
+Any other file type is moved to the **Others** folder.
 
 ---
 
-## 🚀 How to Run the Project
+## Requirements
 
-1. Make sure you have Python 3 installed on your system.
-2. Download the `file_organizer.py` script from the repository.
-3. Open your terminal and run the script:
+* Python 3.x
+* No external libraries required
 
-```
+---
+
+## Usage
+
+1. Download or clone the repository.
+2. Run the script:
+
+```bash
 python file_organizer.py
 ```
 
-4. When prompted, paste the path to the folder you want to organize (e.g., your Downloads folder).
-5. Hit Enter on your keyboard to start organizing the files.
-6. The script will automatically organize any new files in that folder.
+3. When prompted, enter the full path of the directory you want to organize.
+4. Press Enter to start the process.
+
+---
+
+## How It Works
+
+* Verifies the provided path is a valid directory.
+* Creates category folders inside the target directory.
+* Scans all files in the main directory.
+* Moves each file into its matching category folder.
+* Displays a success message after completion.
+
+---
+
+## Notes
+
+* Files are moved, not copied.
+* Subdirectories are not processed.
+* If a file with the same name already exists in a destination folder, an error may occur.
+* Always verify the directory path before running the script.
